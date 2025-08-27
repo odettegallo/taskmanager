@@ -127,10 +127,11 @@ class InterfazUsuarios {
     await this.gestor.cargarUsuarios(); // esperar a cargar usuarios
     this.configurarEventos();
     this.verificarAutenticacion();
+    this.mostrarUsuarioLogueado();
+
 
     if (document.getElementById('lista-usuarios')) {
       this.cargarListaUsuarios();
-      this.mostrarUsuarioLogueado();
     }
   }
 

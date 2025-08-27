@@ -51,6 +51,10 @@ p {
   overflow: hidden;
 }
 
+header a {
+  text-decoration: none;
+}
+
 .header::before {
   content: '';
   position: absolute;
@@ -77,6 +81,9 @@ p {
   100% { left: 100%; }
 }
 
+#tarea {
+  cursor: pointer;
+}
 /* Componente usuarios */
 .usuarios {
   padding: 20px 0;
