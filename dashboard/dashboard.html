@@ -4,30 +4,55 @@
   <meta charset="UTF-8">
   <title>Dashboard - Taskmanager</title>
   <link rel="stylesheet" href="../cssGlobal/stylesGlobal.css">
+  <link rel="stylesheet" href="./css/stylesDash.css">
 </head>
 <body>
 
   <header>
     <div class="left">
-      <span><strong>Bienvenido:</strong> Nombre usuario</span>
-      <a href="#">Salir</a>
+      <span><strong>Bienvenido:</strong> <span id="nombreUsuario">Nombre usuario</span></span>
+      <a href="#" id="logoutBtn">Salir</a>
     </div>
 
     <div class="center">
-      Taskmanager
+      <a href="../dashboard/dashboard.html" class="nav-link">Dashboard</a>
     </div>
 
     <div class="right">
-      <a href="#">Dashboard</a>
-      <a href="#">Usuarios</a>
+      <a href="../tareas/tareas.html" class="nav-link">Taskmanager</a>
+      <a href="../usuarios/usuarios.html" class="nav-link">Usuarios</a>
     </div>
   </header>
 
   <main class="container">
-    <h2>Ejemplo</h2>
-    <p>Ejemplo.</p>
+    <h2>Estadísticas del Proyecto</h2>
+
+    <section class="dashboard-stats">
+      <div class="stat-card">
+        <h3>Total de Tareas</h3>
+        <p id="totalTasksCount" class="stat-number">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Tareas Completadas</h3>
+        <p id="completedTasksCount" class="stat-number">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Tareas Pendientes</h3>
+        <p id="inProgressTasksCount" class="stat-number">0</p>
+      </div>
+    </section>
+
+    <section class="dashboard-charts">
+      <div class="chart-container">
+        <canvas id="tasksProgressChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="tasksByResponsibleChart"></canvas>
+      </div>
+    </section>
   </main>
 
-  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/dashboard.js" defer></script>
 </body>
 </html>

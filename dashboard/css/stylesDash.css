@@ -1,0 +1,49 @@
+.dashboard-stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch; /* Mejor para igualar altura de tarjetas */
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1 1 200px; /* Flex-grow, flex-shrink, flex-basis */
+  max-width: 300px;
+}
+
+.stat-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.stat-number {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+}
+
+.dashboard-charts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.chart-container {
+  flex: 1 1 300px;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 300px; /* Asegura espacio para el canvas */
+}
