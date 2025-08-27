@@ -5,6 +5,7 @@
   <title>Usuarios - Taskmanager</title>
   <link rel="stylesheet" href="../cssGlobal/stylesGlobal.css">
   <link rel="stylesheet" href="css/stylesUsuarios.css">
+  <script src="js/scriptUsuarios.js" defer></script>
 </head>
 <body>
 
@@ -14,9 +15,9 @@
       <a href="acceso.html" id="btn-salir">Salir</a>
     </div>
 
-    <div class="center">
+    <a href="../tareas/tareas.html"><div class="center">
       Taskmanager
-    </div>
+    </div></a>
 
     <div class="right">
       <a href="../dashboard/dashboard.html">Dashboard</a>
@@ -39,12 +40,10 @@
       </div>
       
       <div class="usuarios__lista" id="lista-usuarios">
-        <!-- Los usuarios se cargarán dinámicamente aquí -->
       </div>
     </div>
   </main>
 
-  <!-- Modal para crear/editar usuario -->
   <div class="modal" id="modal-usuario">
     <div class="modal__overlay" id="modal-overlay"></div>
     <div class="modal__content">
@@ -69,15 +68,13 @@
     </div>
   </div>
 
-  <!-- Modal de notificación personalizada -->
+
   <div class="notification-modal" id="notification-modal">
     <div class="notification-modal__overlay"></div>
     <div class="notification-modal__content">
-      <div class="notification-modal__icon" id="notification-icon">
-        <!-- Icono se agregará dinámicamente -->
+      <div class="notification-modal__icon" id="notification-icon">>
       </div>
       <div class="notification-modal__message" id="notification-message">
-        <!-- Mensaje se agregará dinámicamente -->
       </div>
       <div class="notification-modal__actions">
         <button class="btn btn--primary" id="notification-ok">Aceptar</button>
@@ -85,7 +82,6 @@
     </div>
   </div>
 
-  <!-- Modal de confirmación personalizada -->
   <div class="confirmation-modal" id="confirmation-modal">
     <div class="confirmation-modal__overlay"></div>
     <div class="confirmation-modal__content">
@@ -95,7 +91,6 @@
         </svg>
       </div>
       <div class="confirmation-modal__message" id="confirmation-message">
-        <!-- Mensaje se agregará dinámicamente -->
       </div>
       <div class="confirmation-modal__actions">
         <button class="btn btn--secondary" id="confirmation-cancel">Cancelar</button>
@@ -104,6 +99,5 @@
     </div>
   </div>
 
-  <script src="js/scriptUsuarios.js"></script>
 </body>
 </html>
