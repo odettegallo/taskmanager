@@ -179,7 +179,7 @@ class InterfazUsuarios {
 
     try {
       await this.gestor.cargarUsuarios(); // asegurar que usuarios estén cargados
-      if (this.gestor.autenticar(nombre, contrasena)) window.location.href = 'usuarios.html';
+      if (this.gestor.autenticar(nombre, contrasena)) window.location.href = '../tareas/tareas.html';
       else this.mostrarError('Credenciales incorrectas');
     } catch {
       this.mostrarError('Error al autenticar usuario');
