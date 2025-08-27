@@ -2,15 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tareas - Taskmanager</title>
-  <link rel="stylesheet" href="../cssGlobal/stylesGlobal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/stylesTareas.css">
 </head>
 <body>
 
   <header>
     <div class="left">
-      <span><strong>Bienvenido:</strong> Nombre usuario</span>
-      <a href="#">Salir</a>
+      <span><strong>Bienvenido:</strong></span>
+      <a href="../usuarios/acceso.html">Salir</a>
     </div>
 
     <div class="center">
@@ -18,16 +20,61 @@
     </div>
 
     <div class="right">
-      <a href="#">Dashboard</a>
-      <a href="#">Usuarios</a>
+      <a href="../dashboard/dashboard.html">Dashboard</a>
+      <a href="../usuarios/usuarios.html">Usuarios</a>
     </div>
   </header>
 
   <main class="container">
-    <h2>Ejemplo</h2>
-    <p>Ejemplo.</p>
+    <button class="add-task-btn" id="openModal">
+      <i class="fas fa-plus"></i>
+    </button>
+    
+    <div class="tasks-section">
+      <h2>Tareas en progreso</h2>
+      <div id="inProgressTasks" class="tasks-container">
+        <!-- Las tareas en progreso se agregarán aquí dinámicamente -->
+      </div>
+    </div>
+    
+    <div class="tasks-section">
+      <h2>Tareas terminadas</h2>
+      <div id="completedTasks" class="tasks-container">
+        <!-- Las tareas completadas se agregarán aquí dinámicamente -->
+      </div>
+    </div>
   </main>
 
-  <script src="js/script.js"></script>
+  <!-- Modal para crear nueva tarea -->
+  <div class="modal" id="taskModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Nueva Tarea</h2>
+        <span class="close-modal" id="closeModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form id="taskForm">
+          <div class="form-group">
+            <label for="taskName">Nombre</label>
+            <input type="text" id="taskName" required>
+          </div>
+          <div class="form-group">
+            <label for="taskDescription">Descripción</label>
+            <textarea id="taskDescription" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="taskResponsible">Responsable</label>
+            <input type="text" id="taskResponsible" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancelTask">Cancelar</button>
+        <button class="btn btn-primary" id="createTask">Crear</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/scriptTareas.js"></script>
 </body>
 </html>
