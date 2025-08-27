@@ -6,6 +6,7 @@
   <title>Tareas - Taskmanager</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="./css/stylesTareas.css">
+  <script src="./js/scriptAPIT.js" defer></script>
 </head>
 <body>
 
@@ -30,22 +31,22 @@
       <i class="fas fa-plus"></i>
     </button>
     
-    <div class="tasks-section">
-      <h2>Tareas en progreso</h2>
-      <div id="inProgressTasks" class="tasks-container">
-        <!-- Las tareas en progreso se agregarán aquí dinámicamente -->
-      </div>
-    </div>
-    
-    <div class="tasks-section">
-      <h2>Tareas terminadas</h2>
-      <div id="completedTasks" class="tasks-container">
-        <!-- Las tareas completadas se agregarán aquí dinámicamente -->
-      </div>
-    </div>
+<div class="tasks-grid">
+  <div class="tasks-section">
+    <h2>Tareas en progreso</h2>
+    <ul id="inProgressTasks" class="task-list">
+      <p class="loading">Cargando tareas...</p>
+    </ul>
+  </div>
+
+  <div class="tasks-section">
+    <h2>Tareas terminadas</h2>
+    <ul id="completedTasks" class="task-list">
+    </ul>
+  </div>
+</div>
   </main>
 
-  <!-- Modal para crear nueva tarea -->
   <div class="modal" id="taskModal">
     <div class="modal-content">
       <div class="modal-header">
@@ -55,7 +56,7 @@
       <div class="modal-body">
         <form id="taskForm">
           <div class="form-group">
-            <label for="taskName">Nombre</label>
+            <label for="taskName">Nombre</label> 
             <input type="text" id="taskName" required>
           </div>
           <div class="form-group">
@@ -64,17 +65,18 @@
           </div>
           <div class="form-group">
             <label for="taskResponsible">Responsable</label>
-            <input type="text" id="taskResponsible" required>
+              <select id="taskResponsible" name="taskResponsible" required>
+                <option value="">Selecciona un responsable</option>
+              </select>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" id="cancelTask">Cancelar</button>
-        <button class="btn btn-primary" id="createTask">Crear</button>
+        <button class="btn btn-secondary" id="cancelTask" type="button">Cancelar</button>
+        <button class="btn btn-primary" id="createTask" type="button">Crear</button>
       </div>
     </div>
   </div>
 
-  <script src="./js/scriptTareas.js"></script>
 </body>
 </html>
