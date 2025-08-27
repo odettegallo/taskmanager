@@ -38,7 +38,7 @@
 ### **👥 Estadísticas (dashboard.html)**
 - Visualización de gráficos y contadores.
 
-### **👥 API **
+### 👥 **API**
 - Integración con las distintas páginas. (PUT, DELETE, POST)
 
 
