@@ -157,17 +157,21 @@ header a {
 }
 
 .usuarios__lista {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Componente usuario-item */
 .usuario-item {
   background: linear-gradient(135deg, #0097a7, #00bcd4, #26c6da);
-  border-radius: 20px;
-  padding: 18px 24px;
+  border-radius: 16px;
+  padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   color: white;
@@ -177,6 +181,9 @@ header a {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 120px;
+  aspect-ratio: 1;
+  text-align: center;
 }
 
 .usuario-item::before {
@@ -197,11 +204,19 @@ header a {
 
 .usuario-item__nombre {
   font-size: 16px;
+  margin-bottom: 16px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  word-break: break-word;
+  text-align: center;
 }
 
 .usuario-item__acciones {
   display: flex;
   gap: 10px;
+  justify-content: center;
+  width: 100%;
 }
 
 .usuario-item__btn {
@@ -238,28 +253,21 @@ header a {
   height: 100%;
 }
 
-.usuario-item__btn--editar {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
 
-.usuario-item__btn--editar:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-}
 
 .usuario-item__btn--eliminar {
-  background: rgba(244, 67, 54, 0.8);
+  background: linear-gradient(135deg, #f44336, #d32f2f);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(244, 67, 54, 0.3);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .usuario-item__btn--eliminar:hover {
-  background: rgba(244, 67, 54, 0.95);
-  transform: scale(1.1) rotate(-5deg);
-  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4);
+  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  transform: scale(1.15) rotate(-5deg);
+  box-shadow: 0 6px 20px rgba(244, 67, 54, 0.5);
 }
 
 .usuario-item__icon {
