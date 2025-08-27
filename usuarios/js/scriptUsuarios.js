@@ -179,7 +179,7 @@ class InterfazUsuarios {
 
     try {
       await this.gestor.cargarUsuarios(); // asegurar que usuarios estén cargados
-      if (this.gestor.autenticar(nombre, contrasena)) window.location.href = 'usuarios.html';
+      if (this.gestor.autenticar(nombre, contrasena)) window.location.href = '../tareas/tareas.html';
       else this.mostrarError('Credenciales incorrectas');
     } catch {
       this.mostrarError('Error al autenticar usuario');
@@ -199,7 +199,7 @@ class InterfazUsuarios {
     evento.preventDefault();
     if (confirm('¿Deseas cerrar sesión?')) {
       this.gestor.cerrarSesion();
-      window.location.href = 'acceso.html';
+      window.location.href = '../usuarios/acceso.html';
     }
   }
 
