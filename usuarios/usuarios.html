@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <title>Usuarios - Taskmanager</title>
   <link rel="stylesheet" href="../cssGlobal/stylesGlobal.css">
+  <link rel="stylesheet" href="css/stylesUsuarios.css">
 </head>
 <body>
 
   <header>
     <div class="left">
-      <span><strong>Bienvenido:</strong> Nombre usuario</span>
-      <a href="#">Salir</a>
+      <span><strong>Bienvenido:</strong> <span id="usuario-logueado">Usuario</span></span>
+      <a href="acceso.html" id="btn-salir">Salir</a>
     </div>
 
     <div class="center">
@@ -18,16 +19,91 @@
     </div>
 
     <div class="right">
-      <a href="#">Dashboard</a>
-      <a href="#">Usuarios</a>
+      <a href="../dashboard/dashboard.html">Dashboard</a>
+      <a href="usuarios.html" class="active">Usuarios</a>
     </div>
   </header>
 
   <main class="container">
-    <h2>Ejemplo</h2>
-    <p>Ejemplo.</p>
+    <div class="usuarios">
+      <div class="usuarios__header">
+        <button class="usuarios__btn-crear" id="btn-crear-usuario">
+          <svg class="usuarios__icon" viewBox="0 0 24 24">
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="usuarios__titulo">
+        <h2>Usuarios</h2>
+      </div>
+      
+      <div class="usuarios__lista" id="lista-usuarios">
+        <!-- Los usuarios se cargarán dinámicamente aquí -->
+      </div>
+    </div>
   </main>
 
-  <script src="js/script.js"></script>
+  <!-- Modal para crear/editar usuario -->
+  <div class="modal" id="modal-usuario">
+    <div class="modal__overlay" id="modal-overlay"></div>
+    <div class="modal__content">
+      <div class="modal__header">
+        <h3 id="modal-titulo">Crear Usuario</h3>
+        <button class="modal__close" id="btn-cerrar-modal">&times;</button>
+      </div>
+      <form class="modal__form" id="form-usuario">
+        <div class="form__group">
+          <label for="nombre-usuario">Nombre</label>
+          <input type="text" id="nombre-usuario" name="nombre" required>
+        </div>
+        <div class="form__group">
+          <label for="contrasena-usuario">Contraseña</label>
+          <input type="password" id="contrasena-usuario" name="contrasena" required>
+        </div>
+        <div class="form__actions">
+          <button type="button" class="btn btn--secondary" id="btn-cancelar">Cancelar</button>
+          <button type="submit" class="btn btn--primary" id="btn-guardar">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de notificación personalizada -->
+  <div class="notification-modal" id="notification-modal">
+    <div class="notification-modal__overlay"></div>
+    <div class="notification-modal__content">
+      <div class="notification-modal__icon" id="notification-icon">
+        <!-- Icono se agregará dinámicamente -->
+      </div>
+      <div class="notification-modal__message" id="notification-message">
+        <!-- Mensaje se agregará dinámicamente -->
+      </div>
+      <div class="notification-modal__actions">
+        <button class="btn btn--primary" id="notification-ok">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de confirmación personalizada -->
+  <div class="confirmation-modal" id="confirmation-modal">
+    <div class="confirmation-modal__overlay"></div>
+    <div class="confirmation-modal__content">
+      <div class="confirmation-modal__icon">
+        <svg viewBox="0 0 24 24" class="confirmation-modal__warning-icon">
+          <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+        </svg>
+      </div>
+      <div class="confirmation-modal__message" id="confirmation-message">
+        <!-- Mensaje se agregará dinámicamente -->
+      </div>
+      <div class="confirmation-modal__actions">
+        <button class="btn btn--secondary" id="confirmation-cancel">Cancelar</button>
+        <button class="btn btn--danger" id="confirmation-confirm">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/scriptUsuarios.js"></script>
 </body>
 </html>

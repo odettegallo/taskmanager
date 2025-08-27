@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <title>Acceso - Taskmanager</title>
   <link rel="stylesheet" href="../cssGlobal/stylesGlobal.css">
+  <link rel="stylesheet" href="css/stylesUsuarios.css">
 </head>
 <body>
 
   <header>
     <div class="left">
-      <span><strong>Bienvenido:</strong> Nombre usuario</span>
-      <a href="#">Salir</a>
+      <span><strong>Taskmanager</strong></span>
     </div>
 
     <div class="center">
@@ -18,16 +18,45 @@
     </div>
 
     <div class="right">
-      <a href="#">Dashboard</a>
-      <a href="#">Usuarios</a>
+      <!-- Sin enlaces hasta autenticarse -->
     </div>
   </header>
 
   <main class="container">
-    <h2>Ejemplo</h2>
-    <p>Ejemplo.</p>
+    <div class="acceso">
+      <div class="acceso__contenedor">
+        <div class="acceso__header">
+          <h2>Acceso al Sistema</h2>
+          <p>Ingresa tus credenciales para continuar</p>
+        </div>
+        
+        <form class="acceso__form" id="form-acceso">
+          <div class="form__group">
+            <label for="nombre-acceso">Nombre</label>
+            <input type="text" id="nombre-acceso" name="nombre" required placeholder="Ingresa tu nombre de usuario">
+          </div>
+          
+          <div class="form__group">
+            <label for="contrasena-acceso">Contraseña</label>
+            <input type="password" id="contrasena-acceso" name="contrasena" required placeholder="Ingresa tu contraseña">
+          </div>
+          
+          <div class="acceso__mensaje" id="mensaje-error" style="display: none;">
+            <p>Credenciales incorrectas. Por favor, verifica tu nombre de usuario y contraseña.</p>
+          </div>
+          
+          <div class="form__actions">
+            <button type="submit" class="btn btn--primary btn--full">Ingresar</button>
+          </div>
+        </form>
+        
+        <div class="acceso__footer">
+          <p>¿No tienes una cuenta? Contacta al administrador para crear un usuario.</p>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <script src="js/script.js"></script>
+  <script src="js/scriptUsuarios.js"></script>
 </body>
 </html>
