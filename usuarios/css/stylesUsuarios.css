@@ -77,6 +77,9 @@ p {
   100% { left: 100%; }
 }
 
+#tarea {
+  cursor: pointer;
+}
 /* Componente usuarios */
 .usuarios {
   padding: 20px 0;
