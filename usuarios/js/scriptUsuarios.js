@@ -199,7 +199,7 @@ class InterfazUsuarios {
     evento.preventDefault();
     if (confirm('¿Deseas cerrar sesión?')) {
       this.gestor.cerrarSesion();
-      window.location.href = 'acceso.html';
+      window.location.href = '../usuarios/acceso.html';
     }
   }
 
